@@ -14,7 +14,7 @@ def solution(nums, k):
 def solution2(nums, k):
     counter = Counter(nums)
     most_commons = counter.most_common(k)
-    answer = [i[0] for i in most_commons]
+    answer = [num for num, freq in most_commons]
     print(answer)
 
 
