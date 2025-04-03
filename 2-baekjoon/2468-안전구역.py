@@ -1,8 +1,9 @@
 """
 2025-04-03=목요일
 """
-
 from collections import deque
+import sys
+sys.setrecursionlimit(1000000)
 
 n = int(input())
 graph = [list(map(int, input().split())) for _ in range(n)]
@@ -32,27 +33,8 @@ def bfs(x, y, visited, height):
                     queue.append((nx, ny))
 
 
-for h in range(max_height + 1):
-    visited = [[False] * n for _ in range(n)]
-    count = 0
-
-    for i in range(n):
-        for j in range(n):
-            if visited[i][j] == False and graph[i][j] > h:
-                bfs(i, j, visited, h)
-                count += 1
-
-    max_region = max(max_region, count)
-
-print(max_region)
-
-
-"""
-import sys
-sys.setrecursionlimit(10000)
-
-
 def dfs(x, y, height, visited, graph, n):
+    print(h, x, y, graph[x][y])
     visited[x][y] = True
 
     for d in range(4):
@@ -62,4 +44,21 @@ def dfs(x, y, height, visited, graph, n):
         if 0 <= nx < n and 0 <= ny < n:
             if not visited[nx][ny] and graph[nx][ny] > height:
                 dfs(nx, ny, height, visited, graph, n)
-"""
+
+
+for h in range(max_height + 1):
+    visited = [[False] * n for _ in range(n)]
+    count = 0
+
+    for i in range(n):
+        for j in range(n):
+            if visited[i][j] == False and graph[i][j] > h:
+                # bfs(i, j, visited, h)
+                dfs(i, j, h, visited, graph, n)
+                count += 1
+
+    max_region = max(max_region, count)
+
+print(max_region)
+
+
