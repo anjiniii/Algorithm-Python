@@ -2,10 +2,10 @@
 2025-04-14
 """
 
-n, k = map(int, input().split())
-
 
 def solution2():
+    n, k = map(int, input().split())
+
     total = (1 + k) * k // 2
     if total > n:
         print(-1)
@@ -16,6 +16,8 @@ def solution2():
 
 
 def solution():
+    n, k = map(int, input().split())
+
     total = (1 + k) * k // 2
     if total > n:
         print(-1)
