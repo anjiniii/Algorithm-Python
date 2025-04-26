@@ -17,9 +17,8 @@ func solution(
     _ overwrite_string:String, 
     _ s:Int
     ) -> String {
-    let endIndex = my_string.index(my_string.startIndex, offsetBy: s)
-    let startIndex = my_string.index(my_string.startIndex, offsetBy: s + overwrite_string.count)
-    print(my_string[..< endIndex] + overwrite_string + my_string[startIndex ...])
-
+    // let endIndex = my_string.index(my_string.startIndex, offsetBy: s)
+    // let startIndex = my_string.index(my_string.startIndex, offsetBy: s + overwrite_string.count)
+    // my_string[..<endIndex] + overwrite_string + my_string[startIndex...]
     return ""
 }
